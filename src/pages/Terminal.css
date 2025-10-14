@@ -1,0 +1,225 @@
+.terminal-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--bg-darker);
+  position: relative;
+}
+
+.terminal-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.terminal-window {
+  width: 100%;
+  max-width: 1000px;
+  height: 700px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: rgba(20, 20, 25, 0.95);
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.terminal-btn svg {
+  display: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.terminal-btn:hover svg {
+  display: block;
+}
+
+.terminal-btn.close {
+  background: #ff5f56;
+}
+
+.terminal-btn.close:hover {
+  background: #e0443a;
+}
+
+.terminal-btn.minimize {
+  background: #ffbd2e;
+}
+
+.terminal-btn.minimize:hover {
+  background: #dfa01f;
+}
+
+.terminal-btn.maximize {
+  background: #27c93f;
+}
+
+.terminal-btn.maximize:hover {
+  background: #1da82f;
+}
+
+.terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  cursor: text;
+}
+
+.terminal-line {
+  margin-bottom: 0.8rem;
+}
+
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.prompt-user {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.prompt-separator {
+  color: var(--text-secondary);
+}
+
+.prompt-path {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.prompt-symbol {
+  color: var(--text-primary);
+  margin-left: 0.2rem;
+}
+
+.prompt-command {
+  color: var(--text-primary);
+  margin-left: 0.3rem;
+}
+
+.terminal-output {
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.terminal-error {
+  color: #ef4444;
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.terminal-input-line {
+  display: block;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: inherit;
+  flex: 1;
+  min-width: 200px;
+  caret-color: var(--accent-blue);
+  margin-left: 0.3rem;
+}
+
+.terminal-input::selection {
+  background: var(--accent-blue);
+  color: white;
+}
+
+/* Scrollbar */
+.terminal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 3px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .terminal-page {
+    padding: 1rem;
+  }
+
+  .terminal-window {
+    height: 600px;
+  }
+
+  .terminal-body {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .terminal-title span {
+    display: none;
+  }
+}
+

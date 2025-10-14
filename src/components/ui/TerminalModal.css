@@ -1,0 +1,163 @@
+.terminal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.terminal-modal-window {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-modal-header {
+  background: rgba(20, 20, 25, 0.95);
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.terminal-modal-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.terminal-modal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.terminal-modal-btn svg {
+  display: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.terminal-modal-btn:hover svg {
+  display: block;
+}
+
+.terminal-modal-btn.close {
+  background: #ff5f56;
+}
+
+.terminal-modal-btn.minimize {
+  background: #ffbd2e;
+}
+
+.terminal-modal-btn.maximize {
+  background: #27c93f;
+}
+
+.terminal-modal-title {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+}
+
+.terminal-modal-body {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  cursor: text;
+}
+
+.terminal-modal-line {
+  margin-bottom: 0.8rem;
+}
+
+.terminal-modal-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prompt-symbol {
+  color: var(--accent-blue);
+  font-weight: bold;
+}
+
+.prompt-command {
+  color: var(--text-primary);
+}
+
+.terminal-modal-output {
+  color: var(--text-primary);
+  margin: 0.5rem 0 0 1.5rem;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.terminal-modal-error {
+  color: #ef4444;
+  margin: 0.5rem 0 0 1.5rem;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.terminal-modal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: inherit;
+  flex: 1;
+  caret-color: var(--accent-blue);
+}
+
+.terminal-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-modal-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.terminal-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .terminal-modal-overlay {
+    padding: 1rem;
+  }
+
+  .terminal-modal-window {
+    height: 400px;
+  }
+
+  .terminal-modal-body {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
+
