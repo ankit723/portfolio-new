@@ -30,6 +30,27 @@
   border: 1px solid rgba(0, 212, 255, 0.2);
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.terminal-window.minimized {
+  height: 50px;
+  overflow: hidden;
+}
+
+.terminal-window.minimized .terminal-body {
+  display: none;
+}
+
+.terminal-window.fullscreen {
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
 .terminal-header {

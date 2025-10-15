@@ -55,7 +55,7 @@ const TechMorphers = () => {
       icon: Calendar,
       title: 'Schedule a Call',
       description: 'Book a free consultation',
-      href: 'https://techmorphers.com/schedule',
+      href: 'https://techmorphers.com/schedule-call',
       color: '#10b981'
     }
   ];

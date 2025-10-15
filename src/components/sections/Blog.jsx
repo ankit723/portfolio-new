@@ -1,55 +1,13 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { BookOpen, Calendar, ArrowRight, Clock } from 'lucide-react';
+import { blogPosts } from '../../pages/blog/blogData';
 import './Blog.css';
 
 const Blog = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  // Placeholder blog posts
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'Building Scalable Web Applications with MERN Stack',
-      excerpt: 'Learn how to architect and build production-ready applications using MongoDB, Express, React, and Node.js...',
-      date: '2025-01-15',
-      readTime: '8 min read',
-      category: 'Web Development',
-      slug: 'building-scalable-mern-apps',
-      featured: true
-    },
-    {
-      id: 2,
-      title: 'Getting Started with Machine Learning in Web Apps',
-      excerpt: 'Integrate AI and ML capabilities into your web applications with TensorFlow.js and practical examples...',
-      date: '2025-01-10',
-      readTime: '12 min read',
-      category: 'AI/ML',
-      slug: 'ml-in-web-apps',
-      featured: true
-    },
-    {
-      id: 3,
-      title: 'The Journey from Student to Founder: Tech Morphers Story',
-      excerpt: 'How I went from learning to code in school to founding my own development studio and managing client projects...',
-      date: '2025-01-05',
-      readTime: '6 min read',
-      category: 'Career',
-      slug: 'student-to-founder-journey',
-      featured: false
-    },
-    {
-      id: 4,
-      title: 'Optimizing React Performance: Tips from Real Projects',
-      excerpt: 'Practical performance optimization techniques I learned while building 20+ production applications...',
-      date: '2024-12-28',
-      readTime: '10 min read',
-      category: 'React',
-      slug: 'react-performance-tips',
-      featured: false
-    }
-  ];
 
   return (
     <section id="blog" className="blog" ref={ref}>
@@ -104,10 +62,10 @@ const Blog = () => {
               <h3 className="blog-post-title">{post.title}</h3>
               <p className="blog-post-excerpt">{post.excerpt}</p>
 
-              <a href={`/blog/${post.slug}`} className="blog-read-more">
+              <Link to={`/blog/${post.slug}`} className="blog-read-more">
                 Read Article
                 <ArrowRight size={16} />
-              </a>
+              </Link>
             </motion.article>
           ))}
         </div>

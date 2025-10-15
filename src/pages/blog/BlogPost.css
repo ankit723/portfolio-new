@@ -1,0 +1,236 @@
+.blog-post-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--bg-dark);
+}
+
+.blog-post-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.blog-post-header {
+  margin-bottom: 3rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  gap: 0.8rem;
+  color: var(--accent-violet);
+}
+
+.post-category-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 6px;
+  color: var(--accent-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.post-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.blog-post-content {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.blog-post-content .lead {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 212, 255, 0.05);
+  border-left: 4px solid var(--accent-blue);
+  border-radius: 8px;
+}
+
+.blog-post-content h2 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.blog-post-content h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-blue);
+}
+
+.blog-post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.blog-post-content li {
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.blog-post-content em {
+  color: var(--accent-turquoise);
+}
+
+.code-block {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #a9b7c6;
+  display: block;
+  white-space: pre-wrap;
+}
+
+.post-cta {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.post-cta h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.post-cta p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.blog-post-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.blog-post-not-found {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.blog-post-not-found h1 {
+  font-size: 3rem;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .blog-post-page {
+    padding: 1rem;
+  }
+
+  .blog-post-container {
+    padding: 2rem 0;
+  }
+
+  .post-title {
+    font-size: 2rem;
+  }
+
+  .post-meta {
+    gap: 1rem;
+  }
+
+  .blog-post-content {
+    font-size: 1rem;
+  }
+
+  .blog-post-content .lead {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .blog-post-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-post-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .blog-post-footer {
+    flex-direction: column;
+  }
+
+  .code-block {
+    padding: 1rem;
+  }
+
+  .code-block code {
+    font-size: 0.8rem;
+  }
+}
+
